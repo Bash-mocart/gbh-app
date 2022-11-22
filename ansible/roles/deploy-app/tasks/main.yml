@@ -14,6 +14,10 @@
       pm2 serve build 3000
   args: 
     chdir: ~/web-app/demo-webapp
+  notify:
+    - reload pm2
+
+- meta: flush_handlers
 
 - name: "List processes"
   shell: |      

@@ -1,0 +1,4 @@
+---
+- name: reload pm2
+  command: pm2 reload -f
+  ignore_errors: True
