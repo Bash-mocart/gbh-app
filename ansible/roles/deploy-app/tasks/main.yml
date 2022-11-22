@@ -14,10 +14,13 @@
       pm2 serve build 3000
   args: 
     chdir: ~/web-app/demo-webapp
-  notify:
-    - reload pm2
+  register: pm2
+  ignore_errors: true
 
-- meta: flush_handlers
+- name: Run only if the task that registered the "result" variable fails
+  shell: |      
+    pm2 reload -f
+  when: pm2 is failed
 
 - name: "List processes"
   shell: |      
