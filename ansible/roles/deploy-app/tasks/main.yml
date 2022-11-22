@@ -11,7 +11,7 @@
   
 - name: "start app"
   shell: |       
-      pm2 serve build 3000
+      pm2 serve build 3000 --name gbh-app
   args: 
     chdir: ~/web-app/demo-webapp
   register: pm2
@@ -19,7 +19,7 @@
 
 - name: Run only if the task that registered the "result" variable fails
   shell: |      
-    pm2 reload -f
+    pm2 reload gbh-app
   when: pm2 is failed
 
 - name: "List processes"
