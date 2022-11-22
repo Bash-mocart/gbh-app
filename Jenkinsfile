@@ -30,6 +30,7 @@ pipeline {
             steps {
           
                 sh 'cp demo-webapp.gz ansible/roles/deploy-app/files'
+                sh 'cd ansible/roles/deploy-app/files && ls'
                 
             }
         }
