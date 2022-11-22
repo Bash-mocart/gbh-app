@@ -2,30 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Web Api') {
+        stage('Install Web App') {
+
             steps {
                 dir('demo-api-main') {
                   sh 'npm install'
-                }
-
-                sh 'pwd'
-                sh 'ls'
-
-                
-            }
-        }
-
-        stage('Install Web App') {
-            // when { changeset "demo-webapp-main/*"}
-            steps {
-                  sh 'npm install'
+                   }
             }
         }
 
 
         stage('Build Web App'){
             steps {
+                   dir('demo-api-main') {
                   sh 'npm run build'
+                   }
             }
         }
 
@@ -38,7 +29,7 @@ pipeline {
         stage('Copy artifacts Web App'){
             steps {
           
-                sh 'cp demo-webapp-main.gz task_1/ansible/roles/deploy-web-app/files'
+                sh 'cp demo-webapp-main.gz ansible/roles/deploy-web-app/files'
                 
             }
         }
