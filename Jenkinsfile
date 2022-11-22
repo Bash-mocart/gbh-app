@@ -22,14 +22,14 @@ pipeline {
 
         stage('Archive Web App'){
             steps {
-                sh 'tar -czvf demo-webapp-main.gz demo-webapp-main/build'
+                sh 'tar -czvf demo-webapp.gz demo-webapp/build'
             }
         }
 
         stage('Copy artifacts Web App'){
             steps {
           
-                sh 'cp demo-webapp-main.gz ansible/roles/deploy-web-app/files'
+                sh 'cp demo-webapp.gz ansible/roles/deploy-web-app/files'
                 
             }
         }
