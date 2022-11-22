@@ -22,15 +22,6 @@ pipeline {
             }
         }
 
-        // stage('Build Web Api'){
-        //     // when { changeset "demo-api-main/*"}
-        //     steps {
-        //     dir('demo-api-main') {
-        //           sh 'npm run build'
-        //         }
-            
-        //     }
-        // }
 
         stage('Build Web App'){
             steps {
