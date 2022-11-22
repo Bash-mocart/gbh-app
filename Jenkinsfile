@@ -37,6 +37,7 @@ pipeline {
           stage('Appending url to inventory'){
             steps {
                 sh "echo ${params.server_url} >> ansible/inventory.txt"
+                sh "cat ansible/inventory.txt"
                 
             }
         }
