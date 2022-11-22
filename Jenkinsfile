@@ -34,6 +34,14 @@ pipeline {
             }
         }
 
+          stage('Appending url to inventory'){
+            steps {
+                sh 'echo $params.server_url >> ansible/inventory.txt'
+                
+            }
+        }
+
+
         stage (' Configure server ') {
               when {
                   expression { return params.current_status == "closed" && params.merged == true }
