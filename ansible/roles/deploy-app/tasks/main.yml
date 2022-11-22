@@ -11,7 +11,7 @@
   
 - name: "start app"
   shell: |       
-      serve build 3000 
+      pm2 serve build 3000
   args: 
     chdir: ~/web-app/demo-webapp
 
