@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     fetch(process.env.REACT_APP_API_URL)
-      .then(res => res.text())
+      .then(res => res.json())
       .then((data) => {
         setIsLoaded(true);
         setMessages(data);
