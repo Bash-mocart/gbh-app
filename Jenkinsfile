@@ -5,7 +5,7 @@ pipeline {
         stage('Install Web App') {
 
             steps {
-                dir('demo-api-main') {
+                dir('demo-webapp') {
                   sh 'npm install'
                    }
             }
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build Web App'){
             steps {
-                   dir('demo-api-main') {
+                   dir('demo-webapp') {
                   sh 'npm run build'
                    }
             }
