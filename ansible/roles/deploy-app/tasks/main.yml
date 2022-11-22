@@ -6,14 +6,14 @@
   
 - name: Unarchive Web App
   unarchive:
-    src: demo-webapp-main.gz
+    src: demo-webapp.gz
     dest: ~/web-app
   
 - name: "start app"
   shell: |       
-      pm2 serve build 3000
+      serve build 3000 
   args: 
-    chdir: ~/web-app/demo-webapp-main
+    chdir: ~/web-app/demo-webapp
 
 - name: "List processes"
   shell: |      
