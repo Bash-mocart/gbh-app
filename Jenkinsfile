@@ -29,7 +29,7 @@ pipeline {
         stage('Copy artifacts Web App'){
             steps {
           
-                sh 'cp demo-webapp.gz ansible/roles/deploy-web-app/files'
+                sh 'cp demo-webapp.gz ansible/roles/deploy-app/files'
                 
             }
         }
