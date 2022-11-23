@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    options {
+    buildDiscarder(logRotator(artifactDaysToKeepStr: '1'))
+  }
+
 
     stages {
         stage('Install Web App') {
