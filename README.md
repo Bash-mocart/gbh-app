@@ -105,7 +105,7 @@ stage (' Configure server ') {
 
     ![Jenkins 6](./images/jen-6.jpeg?raw=true "jenkins") 
 
-* Then you need to create a github webhook use http://<JENKINS:PORT>/generic-webhook-trigger/invoke?token=<YOURTOKEN> as the payload url, and application/json as the content type see here https://docs.github.com/en/developers/webhooks-and-events/webhooks/creating-webhooks, choose the option "Let me select individual events." and select only "Pull request".
+* Then you need to create a github webhook use http://<JENKINS:PORT>/generic-webhook-trigger/invoke?token=YOURTOKEN as the payload url, and application/json as the content type see here https://docs.github.com/en/developers/webhooks-and-events/webhooks/creating-webhooks, choose the option "Let me select individual events." and select only "Pull request".
 
 * To test it, on the dashboard, click on the project and click on Build with parameters, and click on build.
 
