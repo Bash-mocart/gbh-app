@@ -17,7 +17,7 @@
   register: pm2
   ignore_errors: true
 
-- name: Run only if the task that registered the "result" variable fails
+- name: Run only if the task that registered the "pm2" variable fails
   shell: |      
     pm2 reload gbh-app
   when: pm2 is failed
